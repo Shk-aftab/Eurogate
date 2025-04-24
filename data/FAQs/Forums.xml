@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<forum-categories type="array">
+  <forum-category>
+    <id type="integer">77000019486</id>
+    <name>driveMybox-Europe Forums</name>
+    <description>Default forum category, feel free to edit or delete it.</description>
+    <created-at type="dateTime">2020-06-09T15:04:59+02:00</created-at>
+    <updated-at type="dateTime">2020-06-09T15:04:59+02:00</updated-at>
+    <account-id type="integer">1483178</account-id>
+    <position type="integer">1</position>
+    <forums type="array">
+      <forum>
+        <id type="integer">77000097172</id>
+        <name>Smartphone</name>
+        <description>Informationen zum Gebrauch von driveMybox auf dem Smartphone</description>
+        <topics-count type="integer">1</topics-count>
+        <posts-count type="integer">1</posts-count>
+        <position type="integer">1</position>
+        <description-html>&lt;p&gt;Informationen zum Gebrauch von driveMybox auf dem Smartphone&lt;/p&gt;</description-html>
+        <forum-category-id type="integer">77000019486</forum-category-id>
+        <forum-type type="integer">1</forum-type>
+        <forum-visibility type="integer">1</forum-visibility>
+        <convert-to-ticket type="boolean">false</convert-to-ticket>
+        <topics type="array">
+          <topic>
+            <id type="integer">77000181901</id>
+            <forum-id type="integer">77000097172</forum-id>
+            <user-id type="integer">77024902821</user-id>
+            <title>Symstemvoraussetzungen App</title>
+            <created-at type="dateTime">2020-06-26T11:43:27+02:00</created-at>
+            <updated-at type="dateTime">2020-06-26T11:43:27+02:00</updated-at>
+            <hits type="integer">331</hits>
+            <sticky type="integer">1</sticky>
+            <posts-count type="integer">1</posts-count>
+            <replied-at type="dateTime">2020-06-26T11:43:27+02:00</replied-at>
+            <locked type="boolean">false</locked>
+            <replied-by type="integer">77024902821</replied-by>
+            <last-post-id type="integer">77000408292</last-post-id>
+            <stamp-type type="integer">7</stamp-type>
+            <delta type="boolean">true</delta>
+            <user-votes type="integer">0</user-votes>
+            <published type="boolean">true</published>
+            <merged-topic-id type="integer" nil="true"/>
+            <posts type="array">
+              <post>
+                <id type="integer">77000408292</id>
+                <user-id type="integer">77024902821</user-id>
+                <topic-id type="integer">77000181901</topic-id>
+                <body> Generelle Anforderungen   Stabile (mobile) Internetverbindung (4G+)  GPS aktiviert  nur Smartphone (kein Tablet-Support)      iOS:   Min. iOS 13 (iPhone 7+ bevorzugt)      Android:   Min. Android 5.0  Min. RAM: 4GB  Min CPU: Min 10.000 Punkte im Android CPU Mark Rating (Link anklicken)  </body>
+                <created-at type="dateTime">2020-06-26T11:43:27+02:00</created-at>
+                <updated-at type="dateTime">2020-06-26T11:43:27+02:00</updated-at>
+                <forum-id type="integer">77000097172</forum-id>
+                <body-html>&lt;p&gt;Generelle Anforderungen&lt;/p&gt;&lt;ul type="disc"&gt;&lt;li&gt;Stabile (mobile) Internetverbindung (4G+)&lt;/li&gt;&lt;li&gt;GPS aktiviert&lt;/li&gt;&lt;li&gt;nur Smartphone (kein Tablet-Support)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;iOS:&lt;/p&gt;&lt;ul type="disc"&gt;&lt;li&gt;Min. iOS 13 (iPhone 7+ bevorzugt)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Android:&lt;/p&gt;&lt;ul type="disc"&gt;&lt;li&gt;Min. Android 5.0&lt;/li&gt;&lt;li&gt;Min. RAM: 4GB&lt;/li&gt;&lt;li&gt;Min CPU: Min 10.000 Punkte im &lt;a href="https://www.androidbenchmark.net/cpumark_chart.html" rel="noreferrer" target="_blank"&gt;Android CPU Mark Rating&lt;/a&gt; (&lt;a href="https://www.androidbenchmark.net/cpumark_chart.html" rel="noreferrer"&gt;Link&lt;/a&gt; anklicken)&lt;/li&gt;&lt;/ul&gt;</body-html>
+                <answer type="boolean">false</answer>
+                <published type="boolean">true</published>
+                <spam type="boolean" nil="true"/>
+                <trash type="boolean">false</trash>
+                <user-votes type="integer">0</user-votes>
+              </post>
+            </posts>
+          </topic>
+        </topics>
+      </forum>
+      <forum>
+        <id type="integer">77000097174</id>
+        <name>Tips und Tricks</name>
+        <description>Hilfreiche Tips und Tricks.</description>
+        <topics-count type="integer">0</topics-count>
+        <posts-count type="integer">0</posts-count>
+        <position type="integer">2</position>
+        <description-html>&lt;p&gt;Hilfreiche Tips und Tricks.&lt;/p&gt;</description-html>
+        <forum-category-id type="integer">77000019486</forum-category-id>
+        <forum-type type="integer">1</forum-type>
+        <forum-visibility type="integer">1</forum-visibility>
+        <convert-to-ticket type="boolean">false</convert-to-ticket>
+        <topics type="array"/>
+      </forum>
+      <forum>
+        <id type="integer">77000097175</id>
+        <name>Ein Problem melden</name>
+        <description>Fragen oder Fehler (Bugs), die von Kunden gemeldet wurden.</description>
+        <topics-count type="integer">0</topics-count>
+        <posts-count type="integer">0</posts-count>
+        <position type="integer">3</position>
+        <description-html>&lt;p&gt;Fragen oder Fehler (Bugs), die von Kunden gemeldet wurden.&lt;/p&gt;</description-html>
+        <forum-category-id type="integer">77000019486</forum-category-id>
+        <forum-type type="integer">3</forum-type>
+        <forum-visibility type="integer">1</forum-visibility>
+        <convert-to-ticket type="boolean">false</convert-to-ticket>
+        <topics type="array"/>
+      </forum>
+    </forums>
+  </forum-category>
+</forum-categories>

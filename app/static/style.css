@@ -1,0 +1,375 @@
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Lighter background */
+    color: #1c1e21; /* Default text color */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Chat Wrapper */
+.chat-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 800px; /* Limit max width */
+    max-height: 95vh; /* Limit max height */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent content overflow */
+}
+
+/* Header */
+.chat-header {
+    background-color: #f8f9fa; /* Slightly off-white */
+    padding: 12px 20px;
+    border-bottom: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.chat-header h1 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Chatbox Area */
+.chatbox {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Smaller gap between messages */
+}
+
+/* Scrollbar Styling (Optional, Webkit Browsers) */
+.chatbox::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chatbox::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.chatbox::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.chatbox::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+/* Message Styling */
+.message {
+    display: flex; /* Use flex for alignment */
+    max-width: 80%; /* Limit message width */
+    margin-bottom: 10px;
+}
+
+.message-content {
+    padding: 10px 15px;
+    border-radius: 18px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    position: relative; /* For potential future elements like timestamps */
+}
+
+.user-message {
+    justify-content: flex-end; /* Align user messages to the right */
+}
+
+.user-message .message-content {
+    background-color: #007bff; /* User message blue */
+    color: white;
+    border-bottom-right-radius: 5px; /* Bubble tail */
+}
+
+.bot-message {
+    justify-content: flex-start; /* Align bot messages to the left */
+}
+
+.bot-message .message-content {
+    background-color: #e9e9eb; /* Bot message grey */
+    color: #1c1e21;
+    border-bottom-left-radius: 5px; /* Bubble tail */
+}
+
+/* Code Block Styling within Bot Messages */
+.bot-message pre {
+    background-color: #2d2d2d; /* Dark background for code */
+    color: #f8f8f2; /* Light text for code */
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto; /* Allow horizontal scroll for long code lines */
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+    white-space: pre; /* Preserve whitespace and prevent wrapping */
+}
+
+.bot-message code {
+    font-family: inherit; /* Inherit font from pre */
+    background: none; /* No separate background for inline code within pre */
+    padding: 0;
+}
+
+/* Input Area */
+.input-area-wrapper {
+    border-top: 1px solid #e0e0e0;
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+}
+
+.input-area {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff; /* Input background */
+    border: 1px solid #dcdcdc;
+    border-radius: 24px; /* Rounded input area */
+    padding: 5px 5px 5px 15px; /* Padding around input */
+}
+
+#userInput {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 10px 5px;
+    font-size: 1em;
+    background: transparent; /* Make input background transparent */
+}
+
+#sendButton {
+    background-color: #007bff;
+    border: none;
+    border-radius: 50%; /* Make button circular */
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+#sendButton:hover {
+    background-color: #0056b3;
+}
+
+#sendButton:disabled {
+    background-color: #a0c7f0;
+    cursor: not-allowed;
+}
+
+#sendButton svg {
+    fill: white; /* Ensure SVG icon is white */
+}
+
+/* Loading Indicator */
+.loading-indicator {
+    text-align: center;
+    padding-bottom: 5px; /* Space above input area */
+}
+
+/* Simple dot flashing animation */
+.dot-flashing {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  animation: dotFlashing 1s infinite linear alternate;
+  animation-delay: .5s;
+  display: inline-block; /* Center it */
+  margin: 0 5px;
+}
+
+.dot-flashing::before, .dot-flashing::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+}
+
+.dot-flashing::before {
+  left: -15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 0s;
+}
+
+.dot-flashing::after {
+  left: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #9880ff;
+  color: #9880ff;
+  animation: dotFlashing 1s infinite alternate;
+  animation-delay: 1s;
+}
+
+@keyframes dotFlashing {
+  0% {
+    background-color: #9880ff;
+  }
+  50%,
+  100% {
+    background-color: #ebe6ff;
+  }
+}
+
+
+.hidden {
+    display: none;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .chat-wrapper {
+        max-height: 100vh;
+        height: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .message {
+        max-width: 90%;
+    }
+
+    .chat-header h1 {
+        font-size: 1.1em;
+    }
+
+    .input-area-wrapper {
+        padding: 8px 10px;
+    }
+
+     #userInput {
+        font-size: 0.95em;
+    }
+
+    #sendButton {
+        width: 36px;
+        height: 36px;
+    }
+     #sendButton svg {
+         width: 20px;
+         height: 20px;
+     }
+}
+
+/* ... (Keep existing styles from previous response) ... */
+
+/* Input Area Enhancements */
+.input-area-wrapper {
+    border-top: 1px solid #e0e0e0;
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    /* Make space for file info if shown */
+}
+
+/* Style for the file info display area */
+.file-info {
+    font-size: 0.85em;
+    color: #555;
+    margin-bottom: 5px;
+    padding: 3px 8px;
+    background-color: #e9ecef;
+    border-radius: 12px;
+    display: inline-block; /* Fit content */
+    max-width: calc(100% - 20px); /* Prevent overflow */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#filename {
+    font-weight: 500;
+    margin-right: 5px;
+}
+
+#removeFileButton {
+    background: none;
+    border: none;
+    color: #888;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1em;
+    padding: 0 3px;
+    vertical-align: middle;
+}
+#removeFileButton:hover {
+    color: #333;
+}
+
+
+.input-area {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 24px;
+    padding: 5px 5px 5px 10px; /* Adjusted padding */
+}
+
+/* File Input Label Styling */
+.file-input-label {
+    padding: 8px; /* Padding around the icon */
+    margin-right: 5px; /* Space between icon and text input */
+    cursor: pointer;
+    color: #555; /* Icon color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.file-input-label:hover {
+    background-color: #e9e9eb; /* Light grey hover */
+}
+
+.file-input-label svg {
+     width: 20px; /* Size of the paperclip icon */
+     height: 20px;
+}
+
+/* Hide default file input */
+#fileInput {
+    display: none;
+}
+
+#userInput {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 10px 5px;
+    font-size: 1em;
+    background: transparent;
+}
+
+/* ... (Rest of the styles remain the same) ... */

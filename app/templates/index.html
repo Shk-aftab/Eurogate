@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveMyBox AI Agent</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="chat-wrapper">
+        <header class="chat-header">
+            <h1>DriveMyBox AI Agent</h1>
+        </header>
+        <main id="chatbox" class="chatbox">
+            <div class="message bot-message">
+                <div class="message-content">
+                    Hello! How can I help you with driveMybox today? Ask me about orders, FAQs, request a price quote, or upload a document (.txt, .pdf) for analysis.
+                </div>
+            </div>
+        </main>
+        <footer class="input-area-wrapper">
+             <div id="loading" class="loading-indicator hidden">
+                <div class="dot-flashing"></div>
+             </div>
+             <!-- File Upload Info Area -->
+             <div id="file-info" class="file-info hidden">
+                 Selected File: <span id="filename"></span>
+                 <button id="removeFileButton" title="Remove file">×</button>
+             </div>
+            <div class="input-area">
+                 <!-- File Input Button -->
+                 <label for="fileInput" class="file-input-label" title="Attach File">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                      <path fill-rule="evenodd" d="M18.97 3.659a2.25 2.25 0 00-3.182 0l-10.94 10.94a2.75 2.75 0 103.89 3.89l10.94-10.94a1.25 1.25 0 111.768 1.768l-10.94 10.94a4.25 4.25 0 11-6.01-6.01l10.94-10.94a2.75 2.75 0 10-3.89-3.89l-1.72 1.72a.75.75 0 101.06 1.06l1.72-1.72a1.25 1.25 0 111.768 1.768L7.94 17.78a2.75 2.75 0 103.89 3.89L21.06 8.44a4.25 4.25 0 00-6.01-6.01L3.659 13.82a.75.75 0 001.06 1.06l11.38-11.38a2.25 2.25 0 00-3.182-3.182L1.522 15.72A5.75 5.75 0 109.69 23.89l11.38-11.38a2.75 2.75 0 00-3.89-3.89L5.79 20.006a1.25 1.25 0 01-1.768-1.768l11.38-11.38z" clip-rule="evenodd" />
+                    </svg>
+                 </label>
+                 <input type="file" id="fileInput" accept=".txt,.pdf" hidden> <!-- Accept only txt and pdf -->
+
+                <input type="text" id="userInput" placeholder="Send a message or upload a file..." autocomplete="off">
+                <button id="sendButton" aria-label="Send message">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                        <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                    </svg>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
