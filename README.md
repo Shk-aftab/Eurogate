@@ -10,7 +10,7 @@ This project implements an AI agent using Retrieval-Augmented Generation (RAG) a
 *   **Structured Data Query:** Answers specific questions about orders (status, IDs, locations, times) using a Pandas Query Engine on the provided CSV database extract.
 *   **PDF Quote Workflow:**
     *   Accepts PDF uploads (invoices, orders) via the chat interface.
-    *   Uses an LLM program (`LLMTextCompletionProgram`) to extract structured quote details (origin, destination, container type) from the PDF text.
+    *   Uses an LLM to extract structured quote details (origin, destination, container type) from the PDF text.
     *   Validates extracted information.
     *   If details are missing, asks the user for clarification (basic single-turn).
     *   If details are complete, calls the (test) DriveMyBox API to get a price quotation.
@@ -18,15 +18,8 @@ This project implements an AI agent using Retrieval-Augmented Generation (RAG) a
 *   Web Interface: Simple chat UI built with FastAPI, HTML, CSS, JS.
 *   Persistent Index: Uses ChromaDB to store vector embeddings locally (`./storage/`).
 
-## Project Structure
-
-(Keep the structure diagram as before)
-...
-
 ## Setup
-
-(Keep setup steps 1-5 as before, ensuring `python-multipart` is in requirements)
-... Make sure `.env` has the correct **`DRIVEMYBOX_API_BASE_URL`**.
+ Make sure `.env` has the correct **`DRIVEMYBOX_API_BASE_URL`**.
 
 ## Running the Application
 
@@ -70,13 +63,3 @@ This project implements an AI agent using Retrieval-Augmented Generation (RAG) a
     2.  Click the file input button, select your PDF order/invoice file.
     3.  Click "Send".
     4.  The agent will respond with either the quote details or a request for missing information (e.g., "I extracted X, Y but need Container Type. Please provide it.").
-
-## Potential Improvements / Bonus Points
-
-*   **Conversational Clarification:** Implement proper state management to handle multi-turn conversations when asking for missing quote details.
-*   **Robust PDF Structure Parsing:** Use more advanced PDF parsing libraries (like `unstructured`, `PyMuPDF`) or LLM vision models if text extraction is insufficient for complex layouts.
-*   **Enhanced API Tool Parsing (for Text):** If text-based quotes *are* needed, implement robust NLP/LLM function calling to extract parameters reliably.
-*   **Source Citation:** Display file names/page numbers or CSV rows used for RAG/Pandas answers.
-*   **Streaming:** Stream LLM responses and potentially PDF processing status updates.
-*   **Error Handling:** More specific error messages and logging.
-*   **UI/UX:** Improve the frontend significantly.
